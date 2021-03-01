@@ -103,7 +103,7 @@ class ODHFront {
         this.notes = this.buildNote(result);
         this.popup.showNextTo({ x: this.point.x, y: this.point.y, }, await this.renderPopup(this.notes));
 
-    }
+   }
 
     onBgMessage(request, sender, callback) {
         const { action, params } = request;
@@ -282,3 +282,4 @@ class ODHFront {
 }
 
 window.odhfront = new ODHFront();
+

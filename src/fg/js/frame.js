@@ -80,12 +80,23 @@ function hideTranslation(){
     }
 }
 
+// play audio
+
+function autoPlayAudio() {
+    const event = new Event("click");
+    var playbutton = document.getElementsByClassName('odh-playaudio').item(1);
+    playbutton.dispatchEvent(event);
+}
+
+//document.addEventListener('DOMContentLoaded', autoPlayAudio, false);
+
 function onDomContentLoaded() {
     registerAddNoteLinks();
     registerAudioLinks();
     registerSoundLinks();
     registerHiddenClass();
     initSpellnTranslation();
+    autoPlayAudio();
 }
 
 function onMessage(e) {
@@ -120,3 +131,4 @@ function onMouseWheel(e) {
 document.addEventListener('DOMContentLoaded', onDomContentLoaded, false);
 window.addEventListener('message', onMessage);
 window.addEventListener('wheel', onMouseWheel, {passive: false});
+
